@@ -1,5 +1,12 @@
-return { pickGear = {
+local this = {}
+
+--[[
+    Functions for each class return
+    gear list of item objects
+]]
+this.pickGear = {
     ["Acrobat"] = function()
+        local gearList = {}
        --[[
             Weapon: 25 Throwing knives or bow and arrow
             Clothes: Only expensive pants, shirt
@@ -7,6 +14,7 @@ return { pickGear = {
 
     end,
     ["Agent"] = function()
+        local gearList = {}
       --[[
             Dark clothing
             short sword
@@ -14,6 +22,7 @@ return { pickGear = {
       ]]
     end,
     ["Archer"] = function()
+        local gearList = {}
        --[[
            Bow and arrows
            Chainmail helmet
@@ -23,6 +32,7 @@ return { pickGear = {
        ]]
     end,
     ["Assassin"] = function()
+        local gearList = {}
        --[[
             Poison
             dagger
@@ -31,6 +41,7 @@ return { pickGear = {
        ]]
     end,
     ["Barbarian"] = function()
+        local gearList = {}
        --[[
             2H axe
             Alcohol
@@ -38,6 +49,7 @@ return { pickGear = {
        ]]
     end,
     ["Bard"] = function()
+        local gearList = {}
        --[[
             Lute (XAR lute if Bardic Inpsiration installed)
             Book of poems
@@ -46,6 +58,7 @@ return { pickGear = {
        ]]
     end,
     ["Battlemage"] = function()
+        local gearList = {}
        --[[
             Magicka potions
             3x heavy armor
@@ -53,6 +66,7 @@ return { pickGear = {
        ]]
     end,
     ["Crusader"] = function()
+        local gearList = {}
        --[[
             Intervention scrolls
             1H mace
@@ -61,6 +75,7 @@ return { pickGear = {
        ]]
     end,
     ["Healer"] = function()
+        local gearList = {}
        --[[
             3x Health scrolls
             3x Cure disease scrolls
@@ -69,18 +84,21 @@ return { pickGear = {
        ]]
     end,
     ["Knight"] = function()
+        local gearList = {}
        --[[
             5x heavy armor
             Long blade
        ]]
     end,
     ["Mage"] = function()
+        local gearList = {}
        --[[
             Expensive robes
             Magicka potions
        ]]
     end,
     ["Monk"] = function()
+        local gearList = {}
        --[[
             common robes
             3 books
@@ -89,6 +107,7 @@ return { pickGear = {
        ]]
     end,
     ["Nightblade"] = function()
+        local gearList = {}
        --[[
             short sword
             dark clothes
@@ -96,6 +115,7 @@ return { pickGear = {
        ]]
     end,
     ["Pilgrim"] = function()
+        local gearList = {}
        --[[
             10x silverware and redware
             2x alcohol
@@ -104,6 +124,7 @@ return { pickGear = {
        ]]
     end,
     ["Rogue"] = function()
+        local gearList = {}
        --[[
             Short sword
             4x alcohol
@@ -111,6 +132,7 @@ return { pickGear = {
        ]]
     end,
     ["Scout"] = function()
+        local gearList = {}
        --[[
             Long blade
             Shield
@@ -118,12 +140,14 @@ return { pickGear = {
        ]]
     end,
     ["Sorcerer"] = function()
+        local gearList = {}
        --[[
             Magic ring
             Expensive robes
        ]]
     end,
     ["Spellsword"] = function()
+        local gearList = {}
        --[[
             Long blade
             3 magicka potions
@@ -131,6 +155,7 @@ return { pickGear = {
        ]]
     end,
     ["Thief"] = function()
+        local gearList = {}
        --[[
             4x lockpicks and probes
             Dark clothes
@@ -138,6 +163,7 @@ return { pickGear = {
        ]]
     end,
     ["Warrior"] = function()
+        local gearList = {}
        --[[
             4x medium armor
             Long blade
@@ -145,6 +171,7 @@ return { pickGear = {
        ]]
     end,
     ["Witchhunter"] = function()
+        local gearList = {}
        --[[
             5x soul gems
             2x light armor
@@ -153,4 +180,6 @@ return { pickGear = {
        ]]
     end,
 
-}}
+}
+
+return this
