@@ -1,31 +1,40 @@
-local presetClasses = require("mods.mer.startingGear")
-local customClass = require("mods.mer.customClass")
+local presetClasses = require("mer.starterGear.presetClasses")
+local customClasses = require("mer.starterGear.customClasses")
 
 local function addGear(gearList)
-    for _, item in ipairs(gearList) do
+    for _, gear in ipairs(gearList) do
         tes3.addItem{
             reference = tes3.player,
-            item = item,
+            item = gear.item,
+            count = gear.count,
             updateGUI = false,
             playSound = false
         }
-        if (
-            item.objectType == tes3.objectType.armor or
-            item.objectType == tes3.objectType.weapon
-        ) then
-            tes3.mobilePlayer:equip{ item = item }
-        end
     end
     tes3ui.forcePlayerInventoryUpdate()
+
+    --Equip everything in inventory
+    timer.delayOneFrame(function()
+        for _, stack in pairs(tes3.player.object.inventory) do
+            local itemObject = stack.object
+            if (
+                itemObject.objectType == tes3.objectType.armor or
+                itemObject.objectType == tes3.objectType.weapon or
+                itemObject.objectType == tes3.objectType.clothing
+            ) then
+                tes3.mobilePlayer:equip{ item = itemObject, playSound = false }
+            end
+        end
+    end)
 end
 
 local function startClassGear()
-    local class = tes3.getClass()
+    local class = tes3.player.object.class.id
     local gearList
-    if presetClasses[class] then 
+    if presetClasses.pickGear[class] then 
         gearList = presetClasses.pickGear[class]()
     else
-        gearList = customClass.pickGear()
+        gearList = customClasses.pickGear()
     end
     addGear(gearList)
 end
